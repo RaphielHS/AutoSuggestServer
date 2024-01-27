@@ -85,7 +85,7 @@ class Auth:
                     Lastused REAL
                 )""")
             with db:
-                cur.execute(query, param)
+                cur.execute(query, params)
             return True
         except:
             return False
