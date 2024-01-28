@@ -1,29 +1,44 @@
 # AutoSuggestServer
 
-This project was generated with [Angular CLI]
+<!-- Python Flask based -->
 
-## Development server
+## Installation
+    
+```bash
+    pip install -r requirements.txt
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change
+## Usage
 
-## Build
+```bash
+    python server.py
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod`
+## API
 
-## Running unit tests
+### /suggest
 
-Run `ng test` to execute the unit tests via [Karma]
+#### Request
 
-## Running end-to-end tests
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"query":"hello"}' http://localhost:5000/suggest
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor]
+#### Response
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README].
-
-[Angular CLI]:
-[Karma]:
-[Protractor]:
-[Angular CLI README]:
-
+```json
+    {
+        "suggestions": [
+            "hello",
+            "hello world",
+            "hello world 2",
+            "hello world 3",
+            "hello world 4",
+            "hello world 5",
+            "hello world 6",
+            "hello world 7",
+            "hello world 8",
+            "hello world 9"
+        ]
+    }
+```
